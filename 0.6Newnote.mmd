@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant User
+  participant Browser
+  participant Server
+  User->>Browser: Interacts with SPA (clicks "New Note" button)  # Trigger for new note
+  Browser->>Server: POST /api/notes (with new note data)
+Server->>Database: INSERT new note data  # Assuming database storage
+Server->>Browser: 201 Created (or relevant success response)

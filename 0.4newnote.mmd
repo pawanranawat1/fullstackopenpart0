@@ -1,0 +1,8 @@
+sequenceDiagram
+  participant User
+  participant Browser
+  participant Server (studies.cs.helsinki.fi)
+  User->>Browser: Interacts with SPA (writes in text field, clicks "Save" button)  #  
+  Browser->>Server: POST /api/notes (with new note data)
+  Server->>Database: INSERT new note data  # Assuming database storage
+  Server->>Browser: 201 Created

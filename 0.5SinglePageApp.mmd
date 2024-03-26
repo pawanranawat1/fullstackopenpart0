@@ -1,0 +1,11 @@
+sequenceDiagram
+  participant User
+  participant Browser
+  participant Server
+  User->>Browser: Navigates to https://studies.cs.helsinki.fi/exampleapp/spa
+  Browser->>Server: GET / (or specific SPA entry point)  # Assuming clean URL structure
+  Server->>Browser: HTML document (including references to CSS and JS files)
+  Server->>Browser: main.css
+  Server->>Browser: spa.js
+  Browser->>Server: GET /data.json (if data loaded initially) OR other API calls based on app logic  # Consolidated based on feedback
+   Browser->>Server: GET Additional resources (images, fonts, etc.) (as needed)
